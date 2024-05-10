@@ -47,7 +47,9 @@ function Homepage() {
     <div className=" w-full  px-4 pt-8 max-w-6xl mx-auto">
       <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-5 grid-flow-row-dense">
         <motion.div
-         
+         initial={{opacity: 0}}
+         transition={{duration: 0.5, ease: "easeInOut"}}
+         whileInView={{opacity: 1}} viewport={{once:true}}
           className="border cursor-pointer z-20 dark:border-neutral-600 border-neutral-400/60 overflow-hidden relative shadow-xl rounded-lg sm:h-40"
         >
           <div className=" absolute w-full p-2 z-10">
@@ -64,7 +66,9 @@ function Homepage() {
             alt=""
           />
         </motion.div>
-        <div className="dark:bg-[#1E1E1E]  bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl relative rounded-lg h-44 sm:h-40  ">
+        <motion.div  initial={{opacity: 0}}
+         transition={{duration: 0.5, ease: "easeInOut"}}
+         whileInView={{opacity: 1}} viewport={{once:true}} className="dark:bg-[#1E1E1E]  bg-white border dark:border-neutral-600 min-w-[100px]  border-neutral-400/60 shadow-xl relative rounded-lg h-44 sm:h-40  ">
           <div className=" absolute w-full p-2">
             <div className="flex justify-between items-center ">
               <p className="text-xs">Mode</p>
@@ -94,9 +98,11 @@ function Homepage() {
               </button>
             </div>
           </div>
-        </div>
+        </motion.div>
         <motion.div
-         
+          initial={{opacity: 0}}
+          transition={{duration: 0.5, ease: "easeInOut", delay: 0.5}}
+          whileInView={{opacity: 1}} viewport={{once:true}}
           className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60  z-20 cursor-pointer relative shadow-xl rounded-lg  col-span-2 "
         >
           <div className=" absolute w-full p-2 z-10">
@@ -117,7 +123,9 @@ function Homepage() {
             </p>
           </div>
         </motion.div>
-        <div className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl rounded-lg col-span-2 row-span-2 relative  overflow-hidden  ">
+        <motion.div  initial={{opacity: 0}}
+         transition={{duration: 1, ease: "easeInOut", delay: 1}}
+         whileInView={{opacity: 1}} viewport={{once:true}}className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl rounded-lg col-span-2 row-span-2 relative  overflow-hidden  ">
           <div className=" absolute w-full p-2 z-20">
             <p className="text-xs">Experience & Education</p>
             <div className="w-full h-[0.9px] dark:bg-neutral-600 bg-neutral-400/60 mt-1 top-7  " />
@@ -193,8 +201,10 @@ function Homepage() {
           {/* Gradient  */}
           <div className=" bg-gradient-to-t  w-full absolute z-10 from-white via-white dark:from-[#1E1E1E] dark:via-[#1E1E1E] to-transparent bottom-0   h-12 transition-all ease-in duration-200" />
           {/* gradient ends */}
-        </div>
-        <div className=" dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60  shadow-xl rounded-lg min-h-[50px] col-span-2 row-span-2 relative ">
+        </motion.div>
+        <motion.div  initial={{opacity: 0}}
+         transition={{duration: 0.5, ease: "easeInOut"}}
+         whileInView={{opacity: 1}} viewport={{once:true}} className=" dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60  shadow-xl rounded-lg min-h-[50px] col-span-2 row-span-2 relative ">
           <div className=" absolute w-full p-2 z-20">
             <p className="text-xs">Projects</p>
             <div className="w-full h-[0.9px] dark:bg-neutral-600 bg-neutral-400/60 mt-1 top-7  " />
@@ -270,8 +280,10 @@ function Homepage() {
             </div>
           </div>
           {/* <Products /> */}
-        </div>
-        <div className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl rounded-lg min-h-[50px] col-span-2  relative">
+        </motion.div>
+        <motion.div  initial={{opacity: 0}}
+         transition={{duration: 0.5, ease: "easeInOut"}}
+         whileInView={{opacity: 1}} viewport={{once:true}} className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl rounded-lg min-h-[50px] col-span-2  relative">
           <div className=" absolute w-full p-2 z-20">
             <p className="text-xs">Animations/Creative projects (Framer Motion / GSAP)</p>
             <div className="w-full h-[0.9px] dark:bg-neutral-600 bg-neutral-400/60 mt-1 top-7  " />
@@ -306,8 +318,10 @@ function Homepage() {
               
             </div>
           </div>
-        </div>
-        <div className=" dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 overflow-hidden relative shadow-xl rounded-lg :min-h-[50px]  col-span-2 row-span-3 md:row-span-2  ">
+        </motion.div>
+        <motion.div  initial={{opacity: 0}}
+         transition={{duration: 0.5, ease: "easeInOut"}}
+         whileInView={{opacity: 1}} viewport={{once:true}} className=" dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 overflow-hidden relative shadow-xl rounded-lg sm:h-[389px]  col-span-2 row-span-3 md:row-span-2  ">
           <div className=" absolute w-full p-2 z-10">
             <div className="flex justify-between items-center ">
               <p className="text-xs">Latest Work</p>
@@ -325,8 +339,10 @@ function Homepage() {
             height={200}
           />
           </div>
-        </div>
-        <div className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl rounded-lg col-span-2  relative  overflow-hidden  ">
+        </motion.div>
+        <motion.div  initial={{opacity: 0}}
+         transition={{duration: 0.5, ease: "easeInOut"}}
+         whileInView={{opacity: 1}} viewport={{once:true}} className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl rounded-lg col-span-2  relative  overflow-hidden  ">
           <div className=" absolute w-full p-2 z-20 ">
             <p className="text-xs">Languages</p>
             <div className="w-full h-[0.9px] dark:bg-neutral-600 bg-neutral-400/60 mt-1 top-7  " />
@@ -381,8 +397,11 @@ function Homepage() {
           {/* Gradient  */}
           <div className=" bg-gradient-to-t  w-full absolute z-10 from-white via-white dark:from-[#1E1E1E] dark:via-[#1E1E1E] to-transparent bottom-0   h-12 transition-all ease-in duration-200" />
           {/* gradient ends */}
-        </div>
-        <div className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl rounded-lg z-20 h-44 relative">
+        </motion.div>
+        <div className=" rounded-lg  grid grid-cols-2 gap-2 col-span-2 row-span-2 z-40">
+        <motion.div  initial={{opacity: 0}}
+         transition={{duration: 0.5, ease: "easeInOut"}}
+         whileInView={{opacity: 1}} viewport={{once:true}} className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl rounded-lg z-20 h-44 relative">
           <div className=" absolute w-full p-2 z-20">
             <p className="text-xs">Get In Touch</p>
             <div className="w-full h-[0.9px] dark:bg-neutral-600 bg-neutral-400/60 mt-1 top-7  " />
@@ -390,7 +409,7 @@ function Homepage() {
 
           <div className="mt-24 flex flex-col items-center justify-center w-full px-2 ">
             <input
-              className=" text-center rounded-full text-sm p-1 placeholder:text-neutral-700 outline-none border dark:border-neutral-600 border-neutral-400/60  bg-neutral-900 flex justify-center items-center w-full"
+              className=" text-center rounded-full text-sm p-1 placeholder:text-neutral-700 outline-none border dark:border-neutral-600 border-neutral-400/60  bg-neutral-900 w-full"
               type="email"
               placeholder="name@email.com"
             />
@@ -398,9 +417,11 @@ function Homepage() {
               <span>Contact me</span>
             </button>
           </div>
-        </div>
+        </motion.div>
         <motion.div
-        
+         initial={{opacity: 0}}
+         transition={{duration: 0.5, ease: "easeInOut"}}
+         whileInView={{opacity: 1}}viewport={{once:true}}
           className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl rounded-lg h-44 p-2"
         >
           <div>
@@ -425,9 +446,13 @@ function Homepage() {
             </div>
           </div>
         </motion.div>
+        </div>
         <div className="  rounded-lg  grid grid-cols-2 gap-2 col-span-2 row-span-2 z-40">
           <motion.div
-            
+             initial={{opacity: 0}}
+             transition={{duration: 0.5, ease: "easeInOut"}}
+             whileInView={{opacity: 1}}
+             viewport={{once:true}}
             className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl rounded-lg  h-44 p-2 relative "
           >
             <div className=" absolute w-full p-2 z-20">
@@ -438,7 +463,9 @@ function Homepage() {
               <h1 className="text-8xl">3</h1>
             </div>
           </motion.div>
-          <div className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl rounded-lg h-44 p-2 relative z-40">
+          <motion.div initial={{opacity: 0}}
+             transition={{duration: 0.5, ease: "easeInOut"}}
+             whileInView={{opacity: 1}} viewport={{once:true}} className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl rounded-lg h-44 p-2 relative z-40">
             <div>
               <div className=" absolute w-full p-2 z-20">
                 <p className="text-xs">CV</p>
@@ -455,7 +482,7 @@ function Homepage() {
                 <PiArrowDownThin />
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
