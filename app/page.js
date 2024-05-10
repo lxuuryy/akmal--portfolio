@@ -47,9 +47,7 @@ function Homepage() {
     <div className=" w-full  px-4 pt-8 max-w-6xl mx-auto">
       <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-5 grid-flow-row-dense">
         <motion.div
-          drag
-          dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
-          dragElastic={1}
+         
           className="border cursor-pointer z-20 dark:border-neutral-600 border-neutral-400/60 overflow-hidden relative shadow-xl rounded-lg sm:h-40"
         >
           <div className=" absolute w-full p-2 z-10">
@@ -98,9 +96,7 @@ function Homepage() {
           </div>
         </div>
         <motion.div
-          drag
-          dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
-          dragElastic={1}
+         
           className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60  z-20 cursor-pointer relative shadow-xl rounded-lg  col-span-2 "
         >
           <div className=" absolute w-full p-2 z-10">
@@ -331,7 +327,7 @@ function Homepage() {
           </div>
         </div>
         <div className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl rounded-lg col-span-2  relative  overflow-hidden  ">
-          <div className=" absolute w-full p-2 z-20">
+          <div className=" absolute w-full p-2 z-20 ">
             <p className="text-xs">Languages</p>
             <div className="w-full h-[0.9px] dark:bg-neutral-600 bg-neutral-400/60 mt-1 top-7  " />
           </div>
@@ -370,15 +366,15 @@ function Homepage() {
 
             <div className="flex  gap-x-3  px-2 relative ">
               <p className="dark:text-white  text-xs w-20 shrink-0  ">
-                Since 2018
+                Others
               </p>
               <div>
-                <h4 className="text-xs font-bold">Others</h4>
+                
                 <p className="text-[12px] text-neutral-100">Github, Git, Figma</p>
               </div>
             </div>
 
-            <div className="px-2 my-3 ">
+            <div className="px-2 mb-8  sm:mb-8 my-3 ">
               <div className="w-full h-[0.9px] dark:bg-neutral-800  bg-neutral-400/40 " />
             </div>
           </div>
@@ -404,9 +400,7 @@ function Homepage() {
           </div>
         </div>
         <motion.div
-          drag
-          dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
-          dragElastic={1}
+        
           className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl rounded-lg h-44 p-2"
         >
           <div>
@@ -433,9 +427,7 @@ function Homepage() {
         </motion.div>
         <div className="  rounded-lg  grid grid-cols-2 gap-2 col-span-2 row-span-2 z-40">
           <motion.div
-            drag
-            dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
-            dragElastic={1}
+            
             className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl rounded-lg  h-44 p-2 relative "
           >
             <div className=" absolute w-full p-2 z-20">
