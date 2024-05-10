@@ -71,98 +71,20 @@ function HeaderPage() {
     cycleOpen(!open);
   };
 
-  const handleTheme = (newTheme) => {
-    // setTheme(newTheme);
-    cycleOpen(!open);
+  React.useEffect(() => {
+    setTheme("dark");
+  }, []);
 
-    if (newTheme === "system") {
-      setHovertheme(" System Theme");
-      setTheme(newTheme);
-    } else if (newTheme === "light") {
-      setHovertheme(" System Theme");
-      setTheme(newTheme);
-    } else if (newTheme === "dark") {
-      setHovertheme(" System Theme");
-      setTheme(newTheme);
-    }
-  };
-  {
-    /* DF1B89 */
+
+  const toLinkedIn = () => {
+    window.open("https://www.linkedin.com/in/akmal-ashwin-1b6b0b1b5/");
   }
+  
   return (
     <div className="">
       {/* <i className="fi fi-rr-cart-arrow-down"></i> */}
 
-      <AnimatePresence>
-        <motion.header
-          key="parent"
-          variants={ButtonVariant}
-          initial="closed"
-          animate={open ? "open" : "closed"}
-          exit={{
-            height: 0,
-            transition: { delay: 0.7, duration: 0.3 },
-          }}
-          className="mx-auto w-full z-50 flex justify-center fixed top-0 "
-        >
-          <div className="cursor-pointer bg-[#343434]    hover:text-neutral-700 border-neutral-600 border border-t-0  w-[110px] flex-col overflow-hidden rounded-b-xl break-all ">
-            <div
-              onClick={handleClick}
-              className="text-[12px] text-center mt-1 text-neutral-200 group-hover/sidebar:opacity-100 transition-all font-bold ease-out duration-700 "
-            >
-              {hoverTheme ? (
-                <p className="transition-all font-bold ease-out duration-700">
-                  {hoverTheme}
-                </p>
-              ) : (
-                <p className="transition-all font-bold ease-out duration-700">
-                  Switch Theme
-                </p>
-              )}
-            </div>
-
-            {/*  */}
-
-            <div className="bg-[#161616] overflow-hidden  h-fit rounded-xl mt-1">
-              {open && (
-                <div className="gap-x-1 flex justify-center">
-                  {links.map(({ name, theme }, index) => {
-                    const isActive = index === activeIndex;
-                    return (
-                      <>
-                        <motion.div
-                          key={index}
-                          onClick={() => setActiveIndex(index)}
-                          onMouseEnter={() => setActiveIndex(index)}
-                          className=" relative rounded-md text-neutral-400 flex  transition-all ease-in duration-200    "
-                        >
-                          {isActive && (
-                            <motion.span
-                              layoutId="highlight"
-                              className="dark:bg-[#ffffff] bg-yellow-500 w-fit top-0 border border-neutral-700/40   absolute inset-0 z-[2] rounded-2xl"
-                            ></motion.span>
-                          )}
-
-                          <Image
-                            width={200}
-                            height={200}
-                            onClick={() => handleTheme(theme)}
-                            onMouseEnter={() => setHovertheme(theme)}
-                            onMouseLeave={() => setHovertheme(null)}
-                            className="w-8 h-8 opacity-25 duration-500 transition-all ease-in hover:opacity-100 object-cover rounded-full"
-                            src={name}
-                            alt=""
-                          />
-                        </motion.div>
-                      </>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-          </div>
-        </motion.header>
-      </AnimatePresence>
+     
 
       <nav className="flex justify-between items-center w-full  px-4 pt-10 max-w-6xl mx-auto">
         <div className="flex gap-x-3 items-center">
@@ -170,7 +92,7 @@ function HeaderPage() {
             width={200}
             height={200}
             className="w-10 h-10 rounded-full object-cover"
-            src="/jo3.jpeg"
+            src="/IMG_1710.jpg"
             alt=""
           />
 
@@ -181,8 +103,8 @@ function HeaderPage() {
         </div>
 
         <div>
-          <button className="flex w-40 items-center justify-between border border-neutral-600 rounded-full p-1 px-5">
-            <span className="text-xs">Buy my Template</span>
+          <button onClick={toLinkedIn} className="flex w-40 items-center justify-between border border-neutral-600 rounded-full p-1 px-5">
+            <span className="text-xs">Connect with me</span>
             <PiArrowRightThin />
           </button>
         </div>
