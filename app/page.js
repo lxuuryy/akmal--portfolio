@@ -60,7 +60,7 @@ function Homepage() {
           <motion.img
             whileHover={{ scale: 3 }}
             className="h-full w-full duration-300 transition-all ease-in-out object-cover"
-            src={theme == "dark" ? "/lightm.bmp" : "/Capture.PNG"}
+            src="/Capture.PNG"
             alt=""
           />
         </motion.div>
