@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useRouter } from 'next/router';
+
 import {
   PiArrowUpRight,
   PiLinkedinLogoThin,
@@ -8,6 +10,8 @@ import {
   PiArrowDownThin,
   PiGithubLogoThin,
 } from "react-icons/pi";
+import { GrProjects } from "react-icons/gr";
+
 
 import { IoIosMailUnread } from "react-icons/io";
 
@@ -25,6 +29,11 @@ import Image from "next/image";
 //   { name: <PiGithubLogoLight />, href: "https://github.com/Joscriptt" },
 // ];
 
+
+function gotoLinkedIn() {
+  window.open("https://www.linkedin.com/in/akmal-ashwin-0aa79b200/");
+
+}
 function Homepage() {
   const { theme } = useTheme();
 
@@ -40,18 +49,18 @@ function Homepage() {
           <div className=" absolute w-full p-2 z-10">
             <div className="flex justify-between items-center ">
               <p className="text-xs">Location</p>
-              <p className="text-neutral-500 text-xs ">New York</p>
+              <p className="text-neutral-500 text-xs ">Melbourne</p>
             </div>
             <div className="w-full h-[0.9px] dark:bg-neutral-600 bg-neutral-400/60 mt-1 top-7  " />
           </div>
           <motion.img
             whileHover={{ scale: 3 }}
             className="h-full w-full duration-300 transition-all ease-in-out object-cover"
-            src={theme == "dark" ? "/lightm.bmp" : "/map.webp"}
+            src={theme == "dark" ? "/lightm.bmp" : "/Capture.PNG"}
             alt=""
           />
         </motion.div>
-        <div className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl relative rounded-lg sm:h-40  ">
+        <div className="dark:bg-[#1E1E1E]  bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl relative rounded-lg h-44 sm:h-40  ">
           <div className=" absolute w-full p-2">
             <div className="flex justify-between items-center ">
               <p className="text-xs">Mode</p>
@@ -70,12 +79,12 @@ function Homepage() {
             </div>
             <div className="w-full h-[0.9px] dark:bg-neutral-600 bg-neutral-400/60 mt-1 top-7  " />
             <div className="">
-              <p className="text-xs font-semibold max-sm:mt-16 sm:mt-4  ">
-                Available for freelance <br /> design projects. Hit me up <br />{" "}
+              <p className="text-xs font-semibold mt-1 md:mt-4 w-full  ">
+                Available for freelance  design projects. Hit me up 
                 for a collab 🦾
               </p>
 
-              <button className="text-xs flex w-full items-center justify-between border dark:border-neutral-600 border-neutral-400/60  mt-3 rounded-full p-1 px-2 dark:bg-neutral-700/40 sm:w-full">
+              <button onClick={gotoLinkedIn} className="text-xs flex w-full items-center justify-between border dark:border-neutral-600 border-neutral-400/60 mt-14  sm:mt-3 rounded-full p-1 px-2 dark:bg-neutral-700/40 sm:w-full">
                 <span>Contact me</span>
                 <PiArrowUpRight />
               </button>
@@ -98,11 +107,11 @@ function Homepage() {
 
           <div className="mt-14 px-3 pb-3">
             <p className="text-xs font-semibold   leading-5">
-              Am Joscript Stone, an adventurous Creative Director based in the
-              vibrant city of San Francisco. With a keen eye for aesthetics, a
+              i am Akmal Ashwin, an adventurous Software Engineer and creative Web Developer based in 
+              Melbourne. With a keen eye for aesthetics, a
               passion for innovation, and a drive for designs that leaves a
               lasting impact. let's collaborate and bring your creative visions
-              to life
+              to life.
             </p>
           </div>
         </motion.div>
@@ -118,15 +127,14 @@ function Homepage() {
 
           <div className=" overflow-y-auto h-[340px] overflow-hidden scrollbar-hide scroll-smooth relative ">
             {/* Starts */}
-            <div className="flex gap-x-3 mt-16 px-2  ">
-              <p className="dark:text-neutral-400  text-xs w-20 shrink-0  ">
-                2002 -- 2012
+            <div className="flex gap-x-3 mt-16 px-2   ">
+              <p className="dark:text-neutral-400 min-w-[100px]  text-xs w-20 shrink-0  ">
+                2024 -- Present
               </p>
               <div>
-                <h4 className="text-xs font-bold">Creative Studio Owner</h4>
+                <h4 className="text-xs font-bold">Insane Ambition </h4>
                 <p className="text-[11px] text-neutral-500">
-                  Self-employed at my own creative studio, delivering innovative
-                  design solutions and giving value to your brand experience.
+                  Web Developer & Designer
                 </p>
               </div>
             </div>
@@ -136,13 +144,13 @@ function Homepage() {
             </div>
 
             <div className="flex  gap-x-3 px-2 relative ">
-              <p className="dark:text-neutral-400  text-xs w-20 shrink-0  ">
-                2020 -- 2022
+              <p className="dark:text-neutral-400 min-w-[100px]  text-xs w-20 shrink-0  ">
+                2024 -- Present
               </p>
               <div>
-                <h4 className="text-xs font-bold">Nike Headquarters</h4>
+                <h4 className="text-xs font-bold">Sincidium</h4>
                 <p className="text-[11px] text-neutral-500">
-                  Designer & Creative Director
+                  Software Engineer
                 </p>
               </div>
             </div>
@@ -152,13 +160,13 @@ function Homepage() {
             </div>
 
             <div className="flex  gap-x-3  px-2 relative ">
-              <p className="dark:text-neutral-400  text-xs w-20 shrink-0  ">
-                2018 -- 2020
+              <p className="dark:text-neutral-400 min-w-[100px]   text-xs w-20 shrink-0  ">
+                2019 -- 2022
               </p>
               <div>
-                <h4 className="text-xs font-bold">Spotify</h4>
+                <h4 className="text-xs font-bold">RMIT University</h4>
                 <p className="text-[11px] text-neutral-500">
-                  Designer & Art Director.
+                  Bachelor of information Technology (Software Engineering) 
                 </p>
               </div>
             </div>
@@ -168,88 +176,17 @@ function Homepage() {
             </div>
 
             <div className="flex  gap-x-3  px-2 relative ">
-              <p className="dark:text-neutral-400  text-xs w-20 shrink-0  ">
-                2016 -- 2018
+              <p className="dark:text-neutral-400 min-w-[100px]  text-xs w-20 shrink-0  ">
+                2022 -- 2023
               </p>
               <div>
-                <h4 className="text-xs font-bold">Apple</h4>
-                <p className="text-[11px] text-neutral-500">Product Designer</p>
+                <h4 className="text-xs font-bold">Local Grown Salads</h4>
+                <p className="text-[11px] text-neutral-500">Cloud Architect (Internship)</p>
               </div>
             </div>
 
-            <div className="px-2 my-3 ">
-              <div className="w-full h-[0.9px] dark:bg-neutral-800  bg-neutral-400/40 " />
-            </div>
-
-            <div className="flex  gap-x-3  px-2 relative ">
-              <p className="dark:text-neutral-400  text-xs w-20 shrink-0  ">
-                2014 -- 2016
-              </p>
-              <div>
-                <h4 className="text-xs font-bold">Royal Academy of Arts</h4>
-                <p className="text-[11px] text-neutral-500">
-                  Graduate Master’s Degree
-                </p>
-              </div>
-            </div>
-
-            <div className="px-2 my-3 ">
-              <div className="w-full h-[0.9px] dark:bg-neutral-800  bg-neutral-400/40 " />
-            </div>
-
-            <div className="flex  gap-x-3  px-2 relative ">
-              <p className="dark:text-white  text-xs w-20 shrink-0  ">
-                2012 -- 2016
-              </p>
-              <div>
-                <h4 className="text-xs font-bold">Zurich University of Arts</h4>
-                <p className="text-[11px] text-neutral-500">
-                  Visual Communication
-                </p>
-              </div>
-            </div>
-
-            <div className="px-2 my-3 ">
-              <div className="w-full h-[0.9px] dark:bg-neutral-800  bg-neutral-400/40 " />
-            </div>
-
-            <div className="flex  gap-x-3  px-2 relative ">
-              <p className="dark:text-white  text-xs w-20 shrink-0  ">
-                2011 -- 2012
-              </p>
-              <div>
-                <h4 className="text-xs font-bold">Vogue France</h4>
-                <p className="text-[11px] text-neutral-500">Graphic Designer</p>
-              </div>
-            </div>
-
-            <div className="px-2 my-3 ">
-              <div className="w-full h-[0.9px] dark:bg-neutral-800  bg-neutral-400/40 " />
-            </div>
-
-            <div className="flex  gap-x-3  px-2 relative ">
-              <p className="dark:text-white  text-xs w-20 shrink-0  ">
-                2010 -- 2011
-              </p>
-              <div>
-                <h4 className="text-xs font-bold">Vignelli Associates</h4>
-                <p className="text-[11px] text-neutral-500">Internship</p>
-              </div>
-            </div>
-
-            <div className="px-2 my-3 ">
-              <div className="w-full h-[0.9px] dark:bg-neutral-800  bg-neutral-400/40 " />
-            </div>
-
-            <div className="flex  gap-x-3  mb-6 px-2 relative ">
-              <p className="dar:text-white  text-xs w-20 shrink-0  ">
-                2010 -- 2011
-              </p>
-              <div>
-                <h4 className="text-xs font-bold">Norm Zurich</h4>
-                <p className="text-[11px] text-neutral-500">Internship</p>
-              </div>
-            </div>
+          
+            
           </div>
           {/* Gradient  */}
           <div className=" bg-gradient-to-t  w-full absolute z-10 from-white via-white dark:from-[#1E1E1E] dark:via-[#1E1E1E] to-transparent bottom-0   h-12 transition-all ease-in duration-200" />
@@ -273,9 +210,9 @@ function Homepage() {
                 />
 
                 <div>
-                  <p className="text-xs">Fusion Pro Presentation</p>
-                  <p className="text-xs">
-                    I've come up with something truly unique
+                  <p className="text-xs"><a className="underline" href="https://sindy.ai" target="_blank" rel="noopener noreferrer">Sindy.ai</a></p>
+                  <p className="text-xs  text-neutral-500">
+                  Built using React, Firebase, and Framer Motion, this website showcases a range of cool, dynamic animations that bring each page to life.
                   </p>
                 </div>
 
@@ -295,9 +232,10 @@ function Homepage() {
                 />
 
                 <div>
-                  <p className="text-xs">Fusion Pro Presentation</p>
-                  <p className="text-xs">
-                    I've come up with something truly unique
+                <p className="text-xs"><a className="underline" href="https://fordeploy-production.up.railway.app/" target="_blank" rel="noopener noreferrer">E-commerce / Fitness site</a></p>
+
+                  <p className="text-xs text-neutral-500">
+                   MERN stack, React, Express, Node, MongoDB and Stripe was used to build this robust e-commerce platform and lists a range of workout exercises.
                   </p>
                 </div>
 
@@ -317,9 +255,9 @@ function Homepage() {
                 />
 
                 <div>
-                  <p className="text-xs">Fusion Pro Presentation</p>
-                  <p className="text-xs">
-                    I've come up with something truly unique
+                <p className="text-xs"><a className="underline" href="https://socialapp-8c7eb.web.app/login" target="_blank" rel="noopener noreferrer">Social Media / NebulaNest site</a></p>
+                  <p className="text-xs text-neutral-500">
+                  This social media platform was built using React and Firebase. It allows users to create posts, like and comment on other users' posts.
                   </p>
                 </div>
 
@@ -333,67 +271,62 @@ function Homepage() {
         </div>
         <div className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl rounded-lg min-h-[50px] col-span-2  relative">
           <div className=" absolute w-full p-2 z-20">
-            <p className="text-xs">Get in touch</p>
+            <p className="text-xs">Animations/Creative projects (Framer Motion / GSAP)</p>
             <div className="w-full h-[0.9px] dark:bg-neutral-600 bg-neutral-400/60 mt-1 top-7  " />
           </div>
 
           <div className="mt-14 mb-4">
             <div className="flex justify-center gap-x-2 px-2">
-              <Tooltip showArrow={true} content="X (Twitter)" color="#161616">
+              <Tooltip showArrow={true} content="Zoom Parallax" color="#161616">
                 <Link
-                  href={"https://twitter.com/Joenaldo"}
+                  href={"https://zoom-parallax-beta.vercel.app/"}
                   className="rounded-full border dark:border-neutral-600 cursor-pointer border-neutral-400/60 p-2 w-16 h-16 flex items-center justify-center"
                 >
-                  <RiTwitterXLine className="text-xl" />
+                  <PiGithubLogoThin className="text-xl " />
                 </Link>
               </Tooltip>
-              <Tooltip showArrow={true} content="GitHub" color="#161616">
+              <Tooltip showArrow={true} content="Parallax Scroll" color="#161616">
                 <Link
-                  href={"https://github.com/Joscriptt"}
+                  href={"https://parallax-scroll-iota.vercel.app/"}
+                  className="rounded-full border dark:border-neutral-600 cursor-pointer border-neutral-400/60 p-2 w-16 h-16 flex items-center justify-center"
+                >
+                  <PiGithubLogoThin className="Floating Image (mouse activity)" />
+                </Link>
+              </Tooltip>
+              <Tooltip showArrow={true} content="Floating images (mouse event)" color="#161616">
+                <Link
+                  href={"https://floating-gallery-mhj5.vercel.app/"}
                   className="rounded-full border dark:border-neutral-600 cursor-pointer border-neutral-400/60 p-2 w-16 h-16 flex items-center justify-center"
                 >
                   <PiGithubLogoThin className="text-xl" />
                 </Link>
               </Tooltip>
-              <Tooltip showArrow={true} content="Behance" color="#161616">
-                <Link
-                  href={"https://twitter.com/Joenaldo"}
-                  className="rounded-full border dark:border-neutral-600 cursor-pointer border-neutral-400/60 p-2 w-16 h-16 flex items-center justify-center"
-                >
-                  <PiBehanceLogoThin className="text-xl" />
-                </Link>
-              </Tooltip>
-              <Tooltip showArrow={true} content="E-mail" color="#161616">
-                <Link
-                  href={"https://twitter.com/Joenaldo"}
-                  className="rounded-full border dark:border-neutral-600 cursor-pointer border-neutral-400/60 p-2 w-16 h-16 flex items-center justify-center"
-                >
-                  <IoIosMailUnread className="text-xl" />
-                </Link>
-              </Tooltip>
+              
             </div>
           </div>
         </div>
-        <div className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 overflow-hidden relative shadow-xl rounded-lg min-h-[50px] col-span-2 row-span-3 md:row-span-2 ">
+        <div className=" dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 overflow-hidden relative shadow-xl rounded-lg :min-h-[50px]  col-span-2 row-span-3 md:row-span-2  ">
           <div className=" absolute w-full p-2 z-10">
             <div className="flex justify-between items-center ">
               <p className="text-xs">Latest Work</p>
-              <p className="text-neutral-500 text-xs ">Waitlist</p>
+              <p className="text-neutral-500 text-xs "></p>
             </div>
             <div className="w-full h-[0.4px] dark:bg-neutral-600 bg-neutral-400/60 mt-1 top-7  " />
           </div>
-
+    <div className="relative flex justify-center items-center h-[250px] md:h-full cursor-pointer">
           <Image
-            width={900}
-            height={300}
-            className="h-full duration-300 hover:scale-110 transition-all ease-in-out object-cover"
-            src={"/jo8.jpeg"}
+           
+            className=" duration-300 hover:scale-110 transition-all ease-in-out object-cover"
+            src={"/sindy_logo_Horizontal_light 1 (4).svg"}
             alt=""
+            width={200}
+            height={200}
           />
+          </div>
         </div>
         <div className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl rounded-lg col-span-2  relative  overflow-hidden  ">
           <div className=" absolute w-full p-2 z-20">
-            <p className="text-xs">Side Projects</p>
+            <p className="text-xs">Languages</p>
             <div className="w-full h-[0.9px] dark:bg-neutral-600 bg-neutral-400/60 mt-1 top-7  " />
           </div>
 
@@ -405,11 +338,11 @@ function Homepage() {
             {/* Starts */}
             <div className="flex gap-x-3 mt-14 px-2  ">
               <p className="dark:text-white  text-xs w-20 shrink-0  ">
-                Since 2023
+                Frontend
               </p>
               <div>
-                <h4 className="text-xs font-bold">WebFlow</h4>
-                <p className="text-[11px] text-neutral-500">Official partner</p>
+                
+                <p className="text-[12px] text-neutral-100">Next.js, React, Framer Motion, GSAP, Tailwind, Responsive Design</p>
               </div>
             </div>
 
@@ -418,10 +351,10 @@ function Homepage() {
             </div>
 
             <div className="flex  gap-x-3 px-2 relative ">
-              <p className="text-white  text-xs w-20 shrink-0  ">Since 2021</p>
+              <p className="text-white  text-xs w-20 shrink-0  ">Backend</p>
               <div>
-                <h4 className="text-xs font-bold">Awwward</h4>
-                <p className="text-[11px] text-neutral-500">Jury Member</p>
+              <p className="text-[12px] text-neutral-100">Node.js Firebase, MongoDB, Express.js, Stripe, API Integration</p>
+
               </div>
             </div>
 
@@ -434,8 +367,8 @@ function Homepage() {
                 Since 2018
               </p>
               <div>
-                <h4 className="text-xs font-bold">ADC Club Global</h4>
-                <p className="text-[11px] text-neutral-500">Jury Member</p>
+                <h4 className="text-xs font-bold">Others</h4>
+                <p className="text-[12px] text-neutral-100">Github, Git, Figma</p>
               </div>
             </div>
 
@@ -449,17 +382,17 @@ function Homepage() {
         </div>
         <div className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl rounded-lg z-20 h-44 relative">
           <div className=" absolute w-full p-2 z-20">
-            <p className="text-xs">Newsletter</p>
+            <p className="text-xs">Get In Touch</p>
             <div className="w-full h-[0.9px] dark:bg-neutral-600 bg-neutral-400/60 mt-1 top-7  " />
           </div>
 
-          <div className="mt-24 flex flex-col items-center w-full px-2 ">
+          <div className="mt-24 flex flex-col items-center justify-center w-full px-2 ">
             <input
-              className=" w-full rounded-full text-sm p-1 placeholder:text-neutral-700 outline-none border dark:border-neutral-600 border-neutral-400/60 pl-6 bg-neutral-900"
+              className=" text-center rounded-full text-sm p-1 placeholder:text-neutral-700 outline-none border dark:border-neutral-600 border-neutral-400/60  bg-neutral-900 flex justify-center items-center w-full"
               type="email"
               placeholder="name@email.com"
             />
-            <button className="text-xs  w-full  border dark:border-neutral-600 border-neutral-400/60  mt-2 rounded-full p-1 px-2 dark:bg-neutral-700/40">
+            <button className="text-xs  w-full border dark:border-neutral-600 border-neutral-400/60  mt-2 rounded-full p-1 px-2 dark:bg-neutral-700/40">
               <span>Contact me</span>
             </button>
           </div>
@@ -472,8 +405,7 @@ function Homepage() {
         >
           <div>
             <p className="text-[10px] mt-8">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto
-              optio vel officia.
+              "Here is the link to my GitHub account"
             </p>
 
             <div className="flex items-center gap-x-2 mt-7">
@@ -481,13 +413,14 @@ function Homepage() {
                 height={400}
                 width={400}
                 className="w-8 h-8 rounded-full object-cover"
-                src="/jo2.jpeg"
+                src="/img_1690.png"
                 alt=""
               />
 
               <div className="">
-                <p className="text-xs">JoScript</p>
-                <p className="text-xs">Founder, Joscript</p>
+              
+                <p className="text-xs text-neutral-500"><a className="underline" href=" https://github.com/lxuuryy" target="_blank" rel="noopener noreferrer">lxuuryy</a></p>                 
+
               </div>
             </div>
           </div>
@@ -504,7 +437,7 @@ function Homepage() {
               <div className="w-full h-[0.9px] dark:bg-neutral-600 bg-neutral-400/60 mt-1 top-7  " />
             </div>
             <div className="mt-10  w-full flex justify-center items-center">
-              <h1 className="text-8xl">17</h1>
+              <h1 className="text-8xl">3</h1>
             </div>
           </motion.div>
           <div className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl rounded-lg h-44 p-2 relative z-40">
