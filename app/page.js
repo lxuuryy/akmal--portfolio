@@ -30,11 +30,17 @@ import Image from "next/image";
 // ];
 
 
-function gotoLinkedIn() {
-  window.open("https://www.linkedin.com/in/akmal-ashwin-0aa79b200/");
 
-}
 function Homepage() {
+
+  function gotoLinkedIn() {
+    window.open("https://www.linkedin.com/in/akmal-ashwin-0aa79b200/");
+  
+  }
+
+  function toSindy() {
+    window.open("https://sindy.ai");
+  }
   const { theme } = useTheme();
 
   return (
@@ -100,14 +106,14 @@ function Homepage() {
           <div className=" absolute w-full p-2 z-10">
             <div className="flex justify-between items-center ">
               <p className="text-xs">About</p>
-              <p className="text-neutral-500 text-xs ">Joscript Stone</p>
+              <p className="text-neutral-500 text-xs ">Bio</p>
             </div>
             <div className="w-full h-[0.9px] dark:bg-neutral-600 bg-neutral-400/60 mt-1 top-7  " />
           </div>
 
           <div className="mt-14 px-3 pb-3">
             <p className="text-xs font-semibold   leading-5">
-              i am Akmal Ashwin, an adventurous Software Engineer and creative Web Developer based in 
+              I am Akmal Ashwin, an adventurous Software Engineer and creative Web Developer based in 
               Melbourne. With a keen eye for aesthetics, a
               passion for innovation, and a drive for designs that leaves a
               lasting impact. let's collaborate and bring your creative visions
@@ -313,7 +319,7 @@ function Homepage() {
             </div>
             <div className="w-full h-[0.4px] dark:bg-neutral-600 bg-neutral-400/60 mt-1 top-7  " />
           </div>
-    <div className="relative flex justify-center items-center h-[250px] md:h-full cursor-pointer">
+    <div className="relative flex justify-center items-center h-[250px] md:h-full cursor-pointer " onClick={toSindy}>
           <Image
            
             className=" duration-300 hover:scale-110 transition-all ease-in-out object-cover"
