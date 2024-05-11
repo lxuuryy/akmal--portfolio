@@ -1,15 +1,19 @@
 "use client";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from 'next/router';
+import {db } from '../app/config/firebase'
+import { collection, addDoc } from "firebase/firestore";  
 
 import {
   PiArrowUpRight,
   PiLinkedinLogoThin,
-  PiBehanceLogoThin,
+  PiBehanceLogoThin, 
   PiArrowDownThin,
   PiGithubLogoThin,
 } from "react-icons/pi";
+import { IoIosRocket } from "react-icons/io";
+
 import { GrProjects } from "react-icons/gr";
 
 
@@ -33,6 +37,43 @@ import Image from "next/image";
 
 function Homepage() {
 
+  const downloadResume = () => {
+    const url = "https://firebasestorage.googleapis.com/v0/b/for-testing-7ffc1.appspot.com/o/Akmal_Ashwin_CV%20(1).pdf?alt=media&token=8de36fca-4a94-4a02-a2a7-6175b4ae3ff7";
+    const filename = "Akmal_Ashwin_CV.pdf";
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+  
+
+  const ref = collection(db, "collab");
+
+  const [name, setName] = useState("");
+  const [success, setSuccess] = useState(false);
+
+  const addMessage = async (e) => {
+    if (!name) return;
+    try {
+      console.log(name);
+      e.preventDefault();
+     const submitted =  await addDoc(ref, {
+        name: name,
+      });
+
+      if (submitted){
+        setSuccess(true);
+      }
+      setName("");
+
+    } catch (error) {
+      console.error("Error adding document: ", error);
+    }
+   
+  }
+
   function gotoLinkedIn() {
     window.open("https://www.linkedin.com/in/akmal-ashwin-0aa79b200/");
   
@@ -42,6 +83,10 @@ function Homepage() {
     window.open("https://sindy.ai");
   }
   const { theme } = useTheme();
+
+  const myResume = () => {
+    window.open("https://firebasestorage.googleapis.com/v0/b/for-testing-7ffc1.appspot.com/o/Akmal_Ashwin_CV%20(1).pdf?alt=media&token=8de36fca-4a94-4a02-a2a7-6175b4ae3ff7");
+  }
 
   return (
     <div className=" w-full  px-4 pt-8 max-w-6xl mx-auto">
@@ -321,7 +366,7 @@ function Homepage() {
         </motion.div>
         <motion.div  initial={{opacity: 0}}
          transition={{duration: 0.5, ease: "easeInOut"}}
-         whileInView={{opacity: 1}} viewport={{once:true}} className=" dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 overflow-hidden relative shadow-xl rounded-lg sm:h-[389px]  col-span-2 row-span-3 md:row-span-2  ">
+         whileInView={{opacity: 1}} viewport={{once:true}} className=" dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 overflow-hidden relative shadow-xl rounded-lg sm:min-h-[200px] md:min-h-[374px] col-span-2 row-span-3 md:row-span-2  ">
           <div className=" absolute w-full p-2 z-10">
             <div className="flex justify-between items-center ">
               <p className="text-xs">Latest Work</p>
@@ -406,17 +451,29 @@ function Homepage() {
             <p className="text-xs">Get In Touch</p>
             <div className="w-full h-[0.9px] dark:bg-neutral-600 bg-neutral-400/60 mt-1 top-7  " />
           </div>
-
-          <div className="mt-24 flex flex-col items-center justify-center w-full px-2 ">
-            <input
+      <AnimatePresence>
+          {!success && <motion.div transition={{duration: 1, ease:"easeInOut"}} exit={{x: 100, opacity: 0}} className="c absolute mt-24 flex flex-col items-center justify-center w-full px-2 ">
+            <input value={name} onChange={(e) => setName(e.target.value)} 
               className=" text-center rounded-full text-sm p-1 placeholder:text-neutral-700 outline-none border dark:border-neutral-600 border-neutral-400/60  bg-neutral-900 w-full"
               type="email"
               placeholder="name@email.com"
+              name= "name"
             />
-            <button className="text-xs  w-full border dark:border-neutral-600 border-neutral-400/60  mt-2 rounded-full p-1 px-2 dark:bg-neutral-700/40">
+            <button onClick={addMessage} className="text-xs  w-full border dark:border-neutral-600 border-neutral-400/60  mt-2 rounded-full p-1 px-2 dark:bg-neutral-700/40">
               <span>Contact me</span>
             </button>
-          </div>
+          </motion.div> }
+          </AnimatePresence>
+          
+           {success && <motion.div  style={{
+      backgroundImage: "linear-gradient(to bottom, #888, #fff)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent"
+    }} initial={{x:-200, opacity:0, y:0}} animate={{x:0, opacity:1}} transition={{duration: 1, ease:"easeInOut", }}  className=" absolute mt-24 flex flex-col items-center justify-center w-full px-2 ">
+            You will be hearing from me soon! 🚀
+            </motion.div>}
+           
+           
         </motion.div>
         <motion.div
          initial={{opacity: 0}}
@@ -473,11 +530,12 @@ function Homepage() {
               </div>
             </div>
             <div className="mt-24 w-full">
-              <button className="text-xs flex w-full items-center justify-between border dark:border-neutral-600 border-neutral-400/60   rounded-full p-1 px-2 dark:bg-neutral-700/40">
+              <button onClick={myResume} className="text-xs flex w-full items-center justify-between border dark:border-neutral-600 border-neutral-400/60   rounded-full p-1 px-2 dark:bg-neutral-700/40">
                 <span>View</span>
                 <PiArrowUpRight />
               </button>
-              <button className="text-xs flex w-full mt-3 items-center justify-between border dark:border-neutral-600 border-neutral-400/60   rounded-full p-1 px-2 dark:bg-neutral-700/40">
+              <button onClick={downloadResume} className="text-xs flex w-full mt-3 items-center justify-between border dark:border-neutral-600 border-neutral-400/60   rounded-full p-1 px-2 dark:bg-neutral-700/40">
+                
                 <span>Download</span>
                 <PiArrowDownThin />
               </button>
@@ -486,7 +544,7 @@ function Homepage() {
         </div>
       </div>
     </div>
-  );
+  ); 
 }
 
 export default Homepage;
