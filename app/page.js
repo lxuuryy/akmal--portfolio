@@ -38,7 +38,7 @@ import Image from "next/image";
 function Homepage() {
 
   const downloadResume = () => {
-    const url = "https://firebasestorage.googleapis.com/v0/b/for-testing-7ffc1.appspot.com/o/Akmal_Ashwin_CV%20(1).pdf?alt=media&token=8de36fca-4a94-4a02-a2a7-6175b4ae3ff7";
+    const url = "https://firebasestorage.googleapis.com/v0/b/for-testing-7ffc1.appspot.com/o/Akmal_Ashwin-CV.pdf?alt=media&token=2bec7772-d983-40cd-95b5-134b51439cfe";
     const filename = "Akmal_Ashwin_CV.pdf";
     const link = document.createElement("a");
     link.href = url;
@@ -85,7 +85,7 @@ function Homepage() {
   const { theme } = useTheme();
 
   const myResume = () => {
-    window.open("https://firebasestorage.googleapis.com/v0/b/for-testing-7ffc1.appspot.com/o/Akmal_Ashwin_CV%20(1).pdf?alt=media&token=8de36fca-4a94-4a02-a2a7-6175b4ae3ff7");
+    window.open("https://firebasestorage.googleapis.com/v0/b/for-testing-7ffc1.appspot.com/o/Akmal_Ashwin-CV.pdf?alt=media&token=2bec7772-d983-40cd-95b5-134b51439cfe");
   }
 
   return (
