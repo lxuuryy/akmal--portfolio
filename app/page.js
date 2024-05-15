@@ -113,7 +113,7 @@ function Homepage() {
         </motion.div>
         <motion.div  initial={{opacity: 0}}
          transition={{duration: 0.5, ease: "easeInOut"}}
-         whileInView={{opacity: 1}} viewport={{once:true}} className="dark:bg-[#1E1E1E]  bg-white border dark:border-neutral-600 min-w-[100px]  border-neutral-400/60 shadow-xl relative rounded-lg h-44 sm:h-40  ">
+         whileInView={{opacity: 1}} viewport={{once:true}} className="dark:bg-[#1E1E1E]  bg-white border dark:border-neutral-600 min-w-[140px]  border-neutral-400/60 shadow-xl relative rounded-lg h-44 sm:h-40  ">
           <div className=" absolute w-full p-2">
             <div className="flex justify-between items-center ">
               <p className="text-xs">Mode</p>
