@@ -336,6 +336,14 @@ function Homepage() {
 
           <div className="mt-14 mb-4">
             <div className="flex justify-center gap-x-2 px-2">
+            <Tooltip showArrow={true} content="Modern Navigation Bar" color="#161616">
+                <Link
+                  href={"https://modern-navbar.vercel.app/"}
+                  className="rounded-full border dark:border-neutral-600 cursor-pointer border-neutral-400/60 p-2 w-16 h-16 flex items-center justify-center"
+                >
+                  <PiGithubLogoThin className="text-xl " />
+                </Link>
+              </Tooltip>
               <Tooltip showArrow={true} content="Zoom Parallax" color="#161616">
                 <Link
                   href={"https://zoom-parallax-beta.vercel.app/"}
