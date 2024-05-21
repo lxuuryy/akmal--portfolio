@@ -335,7 +335,7 @@ function Homepage() {
           </div>
 
           <div className="mt-14 mb-4">
-            <div className="flex justify-center gap-x-2 px-2">
+            <div className="flex justify-center gap-x-2 px-2 flex-wrap">
             <Tooltip showArrow={true} content="Modern Navigation Bar" color="#161616">
                 <Link
                   href={"https://modern-navbar.vercel.app/"}
@@ -357,7 +357,15 @@ function Homepage() {
                   href={"https://parallax-scroll-iota.vercel.app/"}
                   className="rounded-full border dark:border-neutral-600 cursor-pointer border-neutral-400/60 p-2 w-16 h-16 flex items-center justify-center"
                 >
-                  <PiGithubLogoThin className="Floating Image (mouse activity)" />
+                  <PiGithubLogoThin className="text-xl" />
+                </Link>
+              </Tooltip>
+              <Tooltip showArrow={true} content="Overlay effect" color="#161616">
+                <Link
+                  href={"https://scroll-animation-kappa-gold.vercel.app/"}
+                  className="rounded-full border dark:border-neutral-600 cursor-pointer border-neutral-400/60 p-2 w-16 h-16 flex items-center justify-center"
+                >
+                  <PiGithubLogoThin className="text-xl" />
                 </Link>
               </Tooltip>
               <Tooltip showArrow={true} content="Floating images (mouse event)" color="#161616">
