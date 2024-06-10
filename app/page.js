@@ -88,6 +88,10 @@ function Homepage() {
     window.open("https://firebasestorage.googleapis.com/v0/b/for-testing-7ffc1.appspot.com/o/Akmal_Ashwin-CV.pdf?alt=media&token=2bec7772-d983-40cd-95b5-134b51439cfe");
   }
 
+const toMap = () => {
+  window.open("https://www.google.com/maps/place/155+Franklin+St,+Melbourne+VIC+3000/@-37.8088259,144.9595488,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d34e15dcfa1:0xbfb8fe38a1c4454e!8m2!3d-37.8088259!4d144.9595488!16s%2Fg%2F11bw40501n?entry=ttu");
+}
+
   return (
     <div className=" w-full  px-4 pt-8 max-w-6xl mx-auto">
       <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-5 grid-flow-row-dense">
@@ -97,14 +101,14 @@ function Homepage() {
          whileInView={{opacity: 1}} viewport={{once:true}}
           className="border cursor-pointer w-[100%] z-20 dark:border-neutral-600 border-neutral-400/60 overflow-hidden relative shadow-xl rounded-lg sm:h-40"
         >
-          <div className=" absolute w-full p-2 z-10">
+          <div onClick={toMap} className=" absolute w-full p-2 z-10">
             <div className="flex justify-between items-center ">
               <p className="text-xs">Location</p>
               <p className="text-neutral-500 text-xs ">Melbourne</p>
             </div>
             <div className="w-full h-[0.9px] dark:bg-neutral-600 bg-neutral-400/60 mt-1 top-7  " />
           </div>
-          <motion.img
+          <motion.img onClick={toMap}
             whileHover={{ scale: 3 }}
             className="h-full w-full duration-300 transition-all ease-in-out object-cover"
             src="/Capture.PNG"
@@ -261,8 +265,8 @@ function Homepage() {
                 <Image
                   width={200}
                   height={200}
-                  className="w-14 h-14 rounded-full object-cover"
-                  src="/jo4.jpeg"
+                  className="w-14 h-14 rounded-full object-fill"
+                  src="/sindy_logo_Horizontal_light 1 (4).svg"
                   alt=""
                 />
 
@@ -283,17 +287,17 @@ function Homepage() {
                 <Image
                   width={300}
                   height={300}
-                  className="w-14 h-14 rounded-full object-cover"
-                  src="/jo4.jpeg"
+                  className="w-14 h-14 rounded-full object-fill"
+                  src="/logo.jpg"
                   alt=""
                 />
 
                 <div>
-                <p className="text-xs"><a className="underline" href="https://fordeploy-production.up.railway.app/" target="_blank" rel="noopener noreferrer">E-commerce / Fitness site</a></p>
+                <p className="text-xs"><a className="underline" href="https://www.acolon3.com/" target="_blank" rel="noopener noreferrer">A:3 / E-commerce store</a></p>
 
-                  <p className="text-xs text-neutral-500">
-                   MERN stack, React, Express, Node, MongoDB and Stripe was used to build this robust e-commerce platform and lists a range of workout exercises.
-                  </p>
+                <p className="text-xs text-neutral-500">
+      Next.js, TypeScript, GraphQL, Tailwind CSS, and Headless Shopify were used to build this modern e-commerce platform.
+    </p>
                 </div>
 
                 <ul className="menu">
@@ -306,15 +310,15 @@ function Homepage() {
                 <Image
                   width={300}
                   height={300}
-                  className="w-14 h-14 rounded-full object-cover"
-                  src="/jo4.jpeg"
+                  className="w-14 h-14 rounded-full object-fill"
+                  src="/insane_ambition_transparent.png"
                   alt=""
                 />
 
                 <div>
-                <p className="text-xs"><a className="underline" href="https://socialapp-8c7eb.web.app/login" target="_blank" rel="noopener noreferrer">Social Media / NebulaNest site</a></p>
+                <p className="text-xs"><a className="underline" href="https://insaneambition.com/" target="_blank" rel="noopener noreferrer">Insane Ambition website</a></p>
                   <p className="text-xs text-neutral-500">
-                  This social media platform was built using React and Firebase. It allows users to create posts, like and comment on other users' posts.
+                  This futuristic podcast website was built using Next.js, Tailwind CSS, Framer Motion, Firebase and Shadcn UI.
                   </p>
                 </div>
 
@@ -421,7 +425,7 @@ function Homepage() {
               </p>
               <div>
                 
-                <p className="text-[12px] text-neutral-100">Next.js, React, Framer Motion, GSAP, Tailwind, Responsive Design</p>
+                <p className="text-[12px] text-neutral-100">Next.js, React, Tailwind, Framer Motion, Shadcn UI,  GSAP, Tailwind, Responsive Design</p>
               </div>
             </div>
 
@@ -432,7 +436,7 @@ function Homepage() {
             <div className="flex  gap-x-3 px-2 relative ">
               <p className="text-white  text-xs w-20 shrink-0  ">Backend</p>
               <div>
-              <p className="text-[12px] text-neutral-100">Node.js Firebase, MongoDB, Express.js, Stripe, API Integration</p>
+              <p className="text-[12px] text-neutral-100">Node.js, GraphQL, Firebase, MongoDB, Express.js, Stripe, API Integration</p>
 
               </div>
             </div>
